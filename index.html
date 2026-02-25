@@ -5,10 +5,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kopi with Alaric</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Breathing&display=swap" rel="stylesheet">
+    <!-- Note: If Google Fonts doesn't serve 'Breathing', providing a high-quality script fallback -->
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400&display=swap" rel="stylesheet">
     <style>
         body {
             background: linear-gradient(135deg, #f5f7fa 0%, #e4e9f2 100%);
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+        }
+        .font-breathing {
+            /* Fallback to Dancing Script if the specific custom 'Breathing' font isn't available via standard CDN */
+            font-family: 'Breathing', 'Dancing Script', cursive;
+            font-weight: 400; /* Ensuring no bold */
         }
         .btn-press {
             transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
@@ -37,54 +45,52 @@
         }
     </style>
 </head>
-<!-- Changed items-center to items-start to push content to top -->
 <body class="min-h-screen flex items-start justify-center p-4">
 
-    <!-- Added mt-4 for a small top gap -->
     <div class="max-w-xs w-full space-y-3 mt-4">
-        <!-- Compact Header -->
-        <div class="flex items-center justify-center space-x-2 mb-1">
-            <div class="border-[1.5px] border-orange-600 p-1.5 rounded-lg">
-                <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-orange-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+        <!-- Header with Icon and Text on the same line -->
+        <div class="flex items-center justify-center space-x-3 mb-2">
+            <div class="border-[1.5px] border-orange-600 p-1 rounded-lg shrink-0">
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-orange-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                     <path stroke-linecap="round" stroke-linejoin="round" d="M18 8h1a4 4 0 010 8h-1M2 8h16v9a4 4 0 01-4 4H6a4 4 0 01-4-4V8zM6 1v3M10 1v3M14 1v3" />
                 </svg>
             </div>
-            <h1 class="text-xl font-black text-gray-800 tracking-tight">Kopi with Alaric</h1>
+            <h1 class="text-3xl font-normal text-gray-800 tracking-normal font-breathing leading-none">Kopi with Alaric</h1>
         </div>
 
         <div class="space-y-4">
             <!-- Row 1: Scheduling -->
             <section>
-                <h2 class="label-style text-blue-500">Scheduling</h2>
+                <h2 class="label-style text-gray-500">Scheduling</h2>
                 <div class="grid grid-cols-3 gap-1.5">
-                    <!-- Even Week -->
+                    <!-- Even Week - Blue -->
                     <a href="https://calendar.app.google/drLaYLLCmsiNM7ms6" 
                        target="_blank" rel="noopener noreferrer"
-                       class="btn-press py-2 bg-transparent border-[1.5px] border-blue-500 rounded-lg flex flex-col items-center justify-center text-center">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 mb-0.5 text-blue-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                       class="btn-press py-2 bg-transparent border-[1.5px] border-blue-600 rounded-lg flex flex-col items-center justify-center text-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 mb-0.5 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                             <path stroke-linecap="round" stroke-linejoin="round" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
                         </svg>
-                        <span class="text-[8px] font-black text-blue-600 uppercase tracking-tighter leading-tight">Even<br>Week</span>
+                        <span class="text-[8px] font-black text-blue-700 uppercase tracking-tighter leading-tight">Even<br>Week</span>
                     </a>
 
-                    <!-- Odd Week -->
+                    <!-- Odd Week - Amber/Orange for Contrast -->
                     <a href="https://calendar.app.google/qhH6oefTaNDujuRw7" 
                        target="_blank" rel="noopener noreferrer"
-                       class="btn-press py-2 bg-transparent border-[1.5px] border-indigo-500 rounded-lg flex flex-col items-center justify-center text-center">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 mb-0.5 text-indigo-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                       class="btn-press py-2 bg-transparent border-[1.5px] border-amber-500 rounded-lg flex flex-col items-center justify-center text-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 mb-0.5 text-amber-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                             <path stroke-linecap="round" stroke-linejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
                         </svg>
-                        <span class="text-[8px] font-black text-indigo-600 uppercase tracking-tighter leading-tight">Odd<br>Week</span>
+                        <span class="text-[8px] font-black text-amber-700 uppercase tracking-tighter leading-tight">Odd<br>Week</span>
                     </a>
 
-                    <!-- Common Timeslots -->
+                    <!-- Common Timeslots - Emerald -->
                     <a href="https://docs.google.com/spreadsheets/d/1lZUf6o-7wYjtXjXeZFP_2WXj1Yd4CXhdjp_LSDqzSgg/edit?gid=1014015479#gid=1014015479" 
                        target="_blank" rel="noopener noreferrer"
                        class="btn-press py-2 bg-transparent border-[1.5px] border-emerald-500 rounded-lg flex flex-col items-center justify-center text-center">
                         <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 mb-0.5 text-emerald-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                             <path stroke-linecap="round" stroke-linejoin="round" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01" />
                         </svg>
-                        <span class="text-[8px] font-black text-emerald-600 uppercase tracking-tighter leading-tight">Common<br>Timeslots</span>
+                        <span class="text-[8px] font-black text-emerald-700 uppercase tracking-tighter leading-tight">Common<br>Timeslots</span>
                     </a>
                 </div>
             </section>
